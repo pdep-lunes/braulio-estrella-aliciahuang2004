@@ -1,4 +1,4 @@
-module Lib () where
+module Lib  where
 
 import Text.Show.Functions ()
 restarMilDeVida :: Personaje -> Int
@@ -9,8 +9,8 @@ data Personaje = UnPersonaje {
    poderBasico :: String,
    superPoder :: String,
    tieneSuperPoderActivo :: Bool,
-   cantidadDeVida :: Int,
-}
+   cantidadDeVida :: Int
+ } deriving Show
 
 espina :: Personaje 
 espina = UnPersonaje "Espina" "bola de espinas" "granada de espinas" True 4800 
@@ -19,4 +19,4 @@ pamela :: Personaje
 pamela = UnPersonaje "Pamela" "lluvia de tuercas" "torreta curativa" False 9600 
 
 bolaEspinosa :: Personaje -> Personaje
-bolaEspinosa unPersonaje = UnPersonaje {cantidadDeVida = restarMilDeVida(unPersonaje)}
+bolaEspinosa unPersonaje = unPersonaje {cantidadDeVida = restarMilDeVida(unPersonaje)}
